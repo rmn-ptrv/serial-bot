@@ -23,8 +23,7 @@ async def check_sub_channels(user_id):
 async def send_welcome(message: types.Message):
     user_id = message.from_user.id
     if await check_sub_channels(user_id):
-        await message.answer(f"Спасибо за подписку! Вот ссылка на канал с сериалами:
-{SERIALS_CHANNEL}")
+        await message.answer(f"Спасибо за подписку! Вот ссылка на канал с сериалами:{SERIALS_CHANNEL}")
     else:
         kb = types.InlineKeyboardMarkup()
         for ch in CHANNELS:
