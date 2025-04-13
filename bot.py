@@ -35,8 +35,7 @@ async def send_welcome(message: types.Message):
 async def process_callback(callback_query: types.CallbackQuery):
     user_id = callback_query.from_user.id
     if await check_sub_channels(user_id):
-        await bot.send_message(user_id, f"Отлично! Вот ссылка на канал с сериалами:
-{SERIALS_CHANNEL}")
+        await bot.send_message(user_id, f"Отлично! Вот ссылка на канал с сериалами:{SERIALS_CHANNEL}")
     else:
         await bot.send_message(user_id, "Пожалуйста, подпишись на все каналы и попробуй снова.")
 
